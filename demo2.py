@@ -14,14 +14,21 @@ dict_res = make_dict(alphas=alpha_list)
 msg = 'KAKAO'
 len_msg = len(msg)
 result = []
-for i in range(len_msg):
-    for j in range(i, len_msg - i):
-        search_word = msg[0:i+1]
-        if search_word in msg:
-            result.append(search_word)
+for i in range(len_msg + 1):
+
+    for j in range(i + 1, len_msg + 1):
+        search_word = msg[i:j]
+        if search_word in alpha_list:
+            result.append(dict_res[search_word])
         else:
+            alpha_list.append(search_word)
             dict_res[search_word] = count
+            result.append(dict_res[search_word])
             count += 1
+            break
+
+for res in result:
+    print(res)
 
 flag = True
 while flag:
