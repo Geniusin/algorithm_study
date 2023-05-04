@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90da177e-5155-4fdd-b0ea-f9bea34233da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,6 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="aadcbdbe-1c5d-4216-8fe0-8614dce773ff" />
   <component name="ProjectId" id="2Ork3nHuoFbDnbKnCtpizYStBiR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -33,6 +35,8 @@
       <option name="presentableId" value="Default" />
       <updated>1682325895837</updated>
       <workItem from="1682325900324" duration="2928000" />
+      <workItem from="1682476566011" duration="1256000" />
+      <workItem from="1683177589111" duration="21000" />
     </task>
     <servers />
   </component>
