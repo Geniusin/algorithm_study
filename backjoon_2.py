@@ -69,15 +69,34 @@ print(len(x))
 
 
 # 10811 바구니 뒤집기
-
 N, M = map(int, input().split())
 
 baskets = [n+1 for n in range(N)]
 
 for n in range(M):
     i, j = map(int, input().split())
+    tmp = baskets[i-1: j]
+    t = tmp[::-1]
+    cnt = 0
+    for k in range(i-1, j):
+        baskets[k] = t[cnt]
+        cnt += 1
 
-    tmp_list = baskets[i: j+1]
-    t = tmp_list[::-1]
-    for i, a in enumerate(tmp_list):
-        tmp_list[i] = t[i]
+a = ''
+for o in baskets:
+    a += ' ' +str(o)
+print(a[1:])
+
+# 1546 평균
+
+N = int(input())
+
+scores = list(map(int, input().split()))
+
+max_score = max(scores)
+new_scores = []
+for score in scores:
+    new_score = score / max_score * 100
+    new_scores.append(new_score)
+
+print(sum(new_scores) / len(new_scores))

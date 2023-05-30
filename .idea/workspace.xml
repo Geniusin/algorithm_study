@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90da177e-5155-4fdd-b0ea-f9bea34233da" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/backjoon_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backjoon.py" beforeDir="false" afterPath="$PROJECT_DIR$/backjoon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo2.py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/context_recognition" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,7 +51,11 @@
       <workItem from="1682476566011" duration="1256000" />
       <workItem from="1683177589111" duration="21000" />
       <workItem from="1684669505747" duration="2218000" />
+<<<<<<< Updated upstream
       <workItem from="1685020916072" duration="4551000" />
+=======
+      <workItem from="1684803323023" duration="15696000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -63,5 +73,18 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+<<<<<<< Updated upstream
+=======
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="2376" height="1208" key="DiffContextDialog" timestamp="1684805126322">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="92" y="92" width="2376" height="1208" key="DiffContextDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1684805126322" />
+    <state x="958" y="358" key="FileChooserDialogImpl" timestamp="1684834422899">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="958" y="358" key="FileChooserDialogImpl/0.0.2560.1392@0.0.2560.1392" timestamp="1684834422899" />
+>>>>>>> Stashed changes
   </component>
 </project>

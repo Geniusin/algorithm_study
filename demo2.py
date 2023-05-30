@@ -30,11 +30,6 @@ for i in range(len_msg + 1):
 for res in result:
     print(res)
 
-flag = True
-while flag:
-
-#####
-
 # 다트
 def solution(dartResult):
 
