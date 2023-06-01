@@ -25,7 +25,6 @@ def fibonachi(n):
         cnt_rg += 1
         return 1
     else:
-
         return fibonachi(n-2) + fibonachi(n-1)
 
 
