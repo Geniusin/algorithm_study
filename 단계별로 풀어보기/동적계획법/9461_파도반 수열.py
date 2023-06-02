@@ -15,8 +15,7 @@ def tri(n):
 
 print(tri(5))
 
-n = 12
-mem = [-1 for _ in range(n+1)]
+
 def tri_dp(n):
 
     if n == 1: return 1
@@ -27,8 +26,20 @@ def tri_dp(n):
 
     if mem[n] != -1:
         return mem[n]
-    mem[n] = tri(n-1) + tri(n-5)
+    mem[n] = tri_dp(n-1) + tri_dp(n-5)
 
     return mem[n]
 
-print(tri_dp(n))
+N = int(input())
+case_num = []
+for i in range(N):
+    case_num.append(int(input()))
+
+for n in case_num:
+
+    mem = [-1 for _ in range(n+1)]
+
+    res = tri_dp(n)
+
+    print(res)
+
