@@ -1,6 +1,6 @@
 # dfs 풀이
 import sys
-
+sys.stdin = open('input.txt', 'r')
 input = sys.stdin.readline
 
 
