@@ -1,4 +1,3 @@
-
 N = int(input())
 mem = [-1 for _ in range(N+1)]
 

@@ -1,4 +1,4 @@
-x = [-1 for _ in range(6)]
+x = [-1 for _ in range(30)]
 
 
 def bridge(n, m):
@@ -12,5 +12,5 @@ def bridge(n, m):
     x[n] = bridge(1, m-n+1) + bridge(n-1, m-1)
     return x[n]
 
-print(bridge(2, 5))
+print(bridge(13, 29))
 
