@@ -1,16 +1,31 @@
-x = [-1 for _ in range(30)]
+import sys
+input = sys.stdin.readline
 
+def bridg(N, M):
+    if N == 1:
+        return M
 
-def bridge(n, m):
+    elif N == M:
+        return 1
 
-    if n == m: return 1
-    if n == 1: return m
+    elif x[N][M] != 0:
+        return x[N][M]
 
-    if x[n] != -1:
-        return x[n]
+    else:
+        for i in range(1, M-N+2):
+            x[N][M] += bridg(N-1, M-i)
 
-    x[n] = bridge(1, m-n+1) + bridge(n-1, m-1)
-    return x[n]
+    return x[N][M]
 
-print(bridge(13, 29))
+T = int(input())
+results = []
 
+for i in range(T):
+    N, M = map(int, input().split())
+
+    x = [[0 for _ in range(M+1)] for _ in range(N+1)]
+
+    results.append(bridg(N, M))
+
+for res in results:
+    print(res)

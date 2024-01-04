@@ -95,3 +95,21 @@ union = set_char1 | set_char2
 
 
 answer = len(inter) / len(union) * 65536
+
+import sys
+
+input = sys.stdin.readline
+
+results = []
+while True:
+    word = input()[:-1]
+    if word == '0':
+        break
+
+    if word == word[::-1]:
+        results.append('yes')
+    else:
+        results.append('no')
+
+for res in results:
+    print(res)
