@@ -1,5 +1,5 @@
 # 12865 평범한배낭
-
+import re
 # Combinations를 활용한 완전탐색 풀이
 import sys
 from itertools import combinations
@@ -75,3 +75,48 @@ for t in range(T):
         for i in range(4, n+1):
             dps[i] = [dps[i-1][0]+dps[i-2][0], dps[i-1][1]+dps[i-2][i]]
 
+##
+
+N = 5
+stages = [2, 1, 2, 6, 2, 4, 3, 3]
+def solution(N, stages):
+    answer = []
+    res = []
+    rail_rat = 0
+    for n in range(1, N + 1):
+        reached = sum([1 for s in stages if s <= n])
+        not_clear = sum([1 for s in stages if s == n])
+
+        if reached == 0:
+            rail_rat = 0
+        else:
+            fail_rat = not_clear / reached
+        res.append(fail_rat)
+    for n in range(N):
+        answer.append(res.index(max(res)))
+    return answer
+
+
+print(solution(N, stages))
+
+
+x = [0.125, 0.42857142857142855, 0.5, 0.5, 0.0]
+y = sorted(x, reverse=True)
+ans = []
+for i in range(len(x)):
+    rank = x.index(y[i])
+
+    ans.append(x.index(y[i])+1)
+    x[rank] = -1
+
+x = "Hel+lo world!"
+tmp = []
+x = x.lower()
+
+for i in range(len(x)-1):
+    word = x[i:i+2]
+    p = re.search('[a-z]+', word).group()
+    if len(p) == 2:
+        tmp.append(x[i:i+2])
+
+re.match('\w', x)
