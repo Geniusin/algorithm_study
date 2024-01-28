@@ -1,57 +1,67 @@
+# 14503 로봇청소기
+
 import sys
-from collections import deque
+
 input = sys.stdin.readline
 
-# 현재 메모리초과 2468_안전영역 -> 방문처리할때 Q에서 pop 할 떄가 아닌 넣을때 해야 한다 (why?)
+M, N = map(int, input().split())
 
-def dfs(arr, start):
+R, C, D = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(M)]
 
-    q = deque([start])
+nD = [[1, 0], [0, 1], [-1, 0], [0, -1]] # 북 동 남 서
+
+cnt = 0
+while True:
+
+    if arr[R][C] == 0:
+        arr[R][C] = -1
+        cnt += 1
+    rot = False
+
+    # 주변 4칸 중 청소되는칸 체크
+    for d in nD:
+
+        nR = R + d[0]
+        nC = C + d[1]
+
+        if nR < 0 or nR >= N: continue
+        if nC < 0 or nC >= M: continue
+
+        if arr[nR][nC] == 0:
+            rot = True
 
 
-    dy = [0, 0, -1, 1]
-    dx = [1, -1, 0, 0]
-    arr[start[0]][start[1]] = True
-    while q:
-        y, x = q.popleft()
-        for i in range(4):
+            break
+    if rot: # 주변에 청소해야될 곳이 있다?
 
-            ny = y + dy[i]
-            nx = x + dx[i]
+        for _ in range(4):
+            D -= 1
+            if D == -1: D = 3 # 서쪽으로 회전
 
-            if ny < 0 or nx < 0 or ny >= N or nx >= N:
-                continue
-            if arr[ny][nx] == 1:
-                continue
-            if arr[ny][nx] == 0:
-                arr[ny][nx] = True
+            nR = R + nD[D][0]
+            nC = C + nD[D][1]
 
-                q.append([ny, nx])
+            if nR < 0 or nR >= N: continue
+            if nC < 0 or nC >= M: continue
 
-N = int(input())
-arr = [list(map(int, input().split())) for _ in range(N)]
-
-res = 0
-max_h = 0
-for h in range(0, 101):
-    visited = [[False] * N for _ in range(N)]
-
-    for j in range(N):
-        for i in range(N):
-            if arr[j][i] > max_h:
-                max_h = arr[j][i]
-            if arr[j][i] <= h:
-                visited[j][i] = True
-
-    cnt = 0
-    for j in range(N):
-        for i in range(N):
-            if not visited[j][i]:
-                dfs(visited, [j, i])
+            if arr[nR][nC] == 0:
+                arr[nR][nC] = -1 # 청소하면 -1
+                R = nR
+                C = nC
                 cnt += 1
-    res = max(cnt, res)
+                break
+    else:
+        D -= 2
+        if D <= -1: D += 4 # 후진
 
-    if max_h <= h:
-        break
+        nR = R + nD[D][0]
+        nC = C + nD[D][1]
+         # 후진했는데 벽이면 멈춤
+        if nR <= 0 or nR >= N: break
+        if nC <= 0 or nC >= M: break
 
-print(res)
+        R = R + nD[D][0]
+        C = C + nD[D][1]
+
+print(cnt)
