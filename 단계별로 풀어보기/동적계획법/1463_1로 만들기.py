@@ -3,7 +3,7 @@
 import sys
 from collections import deque
 
-# DP
+# DP - Bottom-up
 input = sys.stdin.readline
 
 X = int(input())
@@ -20,7 +20,37 @@ for i in range(2, X+1):
 
 print(dp[X])
 
+# DP- TOp-dowm
+import sys
+input = sys.stdin.readline
 
+X = int(input())
+
+dp = [-1] * (X+1)
+
+dp[0] = 0
+dp[1] = 0
+
+
+def make_1(num):
+    if dp[num] != -1:
+        return dp[num]
+
+    if num % 6 == 0:
+        dp[num] = min(make_1(num//3), make_1(num//2)) + 1
+
+    elif num % 3 == 0:
+        dp[num] = min(make_1(num//3), make_1(num-1)) + 1
+
+    elif num % 2 == 0:
+        dp[num] = min(make_1(num//2), make_1(num-1)) + 1
+
+    else:
+        dp[num] = make_1(num-1) + 1
+
+    return dp[num]
+
+print(make_1(X))
 
 #BFS
 input = sys.stdin.readline
@@ -35,6 +65,7 @@ visited[X] = 1
 while q:
 
     num = q.popleft()
+    print(num)
     if num == 1:
         break
 
