@@ -2,27 +2,21 @@ import sys
 
 input = sys.stdin.readline
 
-num = int(input())
+num_stairs = int(input())
 
-scores = []
-for i in range(1, num+1):
-    scores.append(int(input()))
+scores = [int(input()) for _ in range(num_stairs)]
 
 dp = dict()
 
-step = 0
-for i in range(0, num):
+for i in range(num_stairs):
 
     if i == 0:
+        dp[i] = scores[i]
+    elif i == 1:
+        dp[i] = scores[i-1] + scores[i]
+    elif i == 2:
+        dp[i] = max(scores[i-1], scores[i-2]) + scores[i]
+    else:
+        dp[i] = max(dp[i-3] + scores[i-1], dp[i-2]) + scores[i]
 
-
-    if dp[i-1] >= dp[i-2] and step < 2:
-        step += 1
-
-        dp[i] = dp[i-1] + scores[i]
-    elif dp[i-1] < dp[i-2] or step >= 2:
-
-        dp[i] = dp[i - 1] + scores[i]
-
-        step = 0
-print(dp[num-1])
+print(dp[num_stairs-1])
